@@ -1,5 +1,5 @@
 {
-  "name": "Picture-in-Picture Extension (by Google)",
+  "name": "Custom-Picture-in-Picture Extension (by Google)",
   "description": "Watch video using Picture-in-Picture",
   "version": "1.11",
   "icons": {
@@ -22,6 +22,20 @@
         "chromeos": "Alt+P",
         "linux": "Alt+P"
       }
+    },
+    "test1": {
+      "suggested_key": {
+        "default": "Alt+Shift+1",
+        "mac": "Command+Shift+1"
+      },
+      "description": "Test 1"
+    },
+    "test2": {
+      "suggested_key": {
+        "default": "Alt+Shift+2",
+        "mac": "Command+Shift+2"
+      },
+      "description": "Test 2"
     }
   },
   "permissions": ["scripting", "storage"],

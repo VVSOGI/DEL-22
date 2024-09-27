@@ -22,3 +22,21 @@ chrome.action.onClicked.addListener((tab) => {
     });
   });
 });
+
+chrome.commands.onCommand.addListener((command) => {
+  switch (command) {
+    case "test1":
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (tabs[0]) {
+          chrome.scripting.executeScript({
+            target: { tabId: tabs[0].id },
+            files: ["test1.js"],
+          });
+        }
+      });
+      break;
+    case "test2":
+      console.log("test 2 ", command);
+      break;
+  }
+});
