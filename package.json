@@ -5,12 +5,5 @@
   "main": "index.js",
   "repository": "https://github.com/VVSOGI/custom-picture-in-picture-chrome-extension.git",
   "author": "benny <vvsogi@gmail.com>",
-  "license": "MIT",
-  "dependencies": {
-    "@types/chrome": "^0.0.272",
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.6.2",
-    "webpack": "^5.95.0",
-    "webpack-cli": "^5.1.4"
-  }
+  "license": "MIT"
 }
