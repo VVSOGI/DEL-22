@@ -44,3 +44,15 @@ chrome://extensions/shortcuts
 4. Click button that Load the extracted extension in the upper-left corner.
 5. Select the folder where your manifest.json is located
 6. Use it as you would with the picture-in-picture-chrome-extension.
+
+## Why did you create it?
+
+My brother and I are both currently looking for jobs, so we program together and study together. However, I often want to watch YouTube videos while studying or working, but I don't want to get caught by my brother, so I thought I needed a way to quickly switch between them.
+
+## Caution
+
+Switching will not work if the last touched part of the Chrome browser when switching is a PIP Video. Presumably this is because the PIP Video is not recognized as a tab, even though it is part of the Chrome browser.
+
+## Recommandations
+
+I'm looking for job so it doesn't matter to me, but for those of you who are working, I don't recommend using this feature to watch YouTube videos at work.
