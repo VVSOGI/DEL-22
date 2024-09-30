@@ -11,9 +11,11 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+let usingVideoTabId;
 
 chrome.action.onClicked.addListener((tab) => {
   chrome.storage.sync.get({ optOutAnalytics: false }, (results) => {
+    usingVideoTabId = tab.id;
     const files = ["script.js"];
     chrome.scripting.executeScript({
       target: { tabId: tab.id, allFrames: true },
@@ -25,17 +27,17 @@ chrome.action.onClicked.addListener((tab) => {
 
 chrome.commands.onCommand.addListener((command) => {
   switch (command) {
-    case "test1":
+    case "opacity_down":
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        if (tabs[0]) {
+        if (usingVideoTabId) {
           chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id },
-            files: ["test1.js"],
+            target: { tabId: usingVideoTabId },
+            func: () => {},
           });
         }
       });
       break;
-    case "test2":
+    case "opacity_up":
       console.log("test 2 ", command);
       break;
   }
