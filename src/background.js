@@ -15,30 +15,32 @@ let usingVideoTabId;
 
 chrome.action.onClicked.addListener((tab) => {
   chrome.storage.sync.get({ optOutAnalytics: false }, (results) => {
-    usingVideoTabId = tab.id;
-    const files = ["script.js"];
-    chrome.scripting.executeScript({
-      target: { tabId: tab.id, allFrames: true },
-      world: "MAIN",
-      files,
-    });
+    const isHaveYoutube = tab.url.split(".").find((item) => item === "youtube");
+    if (isHaveYoutube) {
+      usingVideoTabId = tab.id;
+      const files = ["script.js"];
+      chrome.scripting.executeScript({
+        target: { tabId: tab.id, allFrames: true },
+        world: "MAIN",
+        files,
+      });
+    }
   });
 });
 
 chrome.commands.onCommand.addListener((command) => {
   switch (command) {
-    case "opacity_down":
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+    case "switch":
+      chrome.tabs.query({ active: true, currentWindow: true }, () => {
         if (usingVideoTabId) {
+          const files = ["script.js"];
           chrome.scripting.executeScript({
             target: { tabId: usingVideoTabId },
-            func: () => {},
+            world: "MAIN",
+            files,
           });
         }
       });
-      break;
-    case "opacity_up":
-      console.log("test 2 ", command);
       break;
   }
 });
