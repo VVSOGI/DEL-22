@@ -5,6 +5,8 @@ A simple Chrome Extension to demonstrate the [Picture-in-Picture Web API](https:
 Get it on the Chrome Web Store at https://chrome.google.com/webstore/detail/hkgfoiooedgoejojocmhlaklaeopbecg
 
 <img src="https://raw.githubusercontent.com/beaufortfrancois/picture-in-picture-chrome-extension/master/screenshot.png">
+<img src="https://github.com/user-attachments/assets/e2d9a516-8c99-43a0-a2b7-c5e8ebf076bd">
+
 
 ## New in this custom release
 
