@@ -14,7 +14,7 @@
 let usingVideoTabId;
 
 chrome.action.onClicked.addListener((tab) => {
-  chrome.storage.sync.get({ optOutAnalytics: false }, (results) => {
+  chrome.storage.sync.get({ optOutAnalytics: false }, () => {
     const isHaveYoutube = tab.url.split(".").find((item) => item === "youtube");
     if (isHaveYoutube) {
       usingVideoTabId = tab.id;
